@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterappp/Home/admin_homescreen.dart';
+import 'package:flutterappp/Home/graph.dart';
 import 'Authentication/admin_login.dart';
 import 'Theme/userTheme.dart';
 
@@ -15,6 +17,12 @@ class Swatcha extends StatelessWidget {
       title: 'Swatcha',
       theme: userTheme(),
       home: LogIn(),
+
+      routes: {
+        '/HomeAdmin' : (context) => HomeAdmin(),
+        '/LogIn' : (context) => LogIn(),
+        '/GraphScreen' : (context) => GraphScreen(),
+      }
     );
   }
 }

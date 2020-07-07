@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -144,3 +145,33 @@ class Sewer extends StatelessWidget {
 //    );
 //  }
 //}
+=======
+import 'package:flutterappp/Home/admin_homescreen.dart';
+import 'package:flutterappp/Home/graph.dart';
+import 'Authentication/admin_login.dart';
+import 'Theme/userTheme.dart';
+
+
+void main() => runApp(Swatcha());
+
+class Swatcha extends StatelessWidget {
+
+  @override
+
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Swatcha',
+      theme: userTheme(),
+      home: LogIn(),
+
+      routes: {
+        '/HomeAdmin' : (context) => HomeAdmin(),
+        '/LogIn' : (context) => LogIn(),
+        '/GraphScreen' : (context) => GraphScreen(),
+      }
+    );
+  }
+}
+
+>>>>>>> 2ca106713ac501bfb48c7f205afbb6f45d28efec

@@ -1,8 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'rounded_button.dart';
-//import 'package:sewerappp/authentication/login_screen.dart';
-//import 'package:sewerappp/authentication/registration_screen.dart';
 
 class Logo extends StatefulWidget {
   static const String id= 'logo';
@@ -97,7 +94,7 @@ class _LogoState extends State<Logo> {
                               ],
                             ),
                             onPressed: (){
-                              print('You tapped on RaisedButton');
+                              Navigator.pushNamed(context, "/LogIn");
                             },
                           ),
                         ),

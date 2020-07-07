@@ -26,6 +26,8 @@ dependencies:
   firebase_core: ^0.4.5
   firebase_auth: ^0.16.1
   firebase_storage: ^3.1.6
+  flutter_staggered_grid_view: ^0.3.0
+  carousel_pro: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -44,10 +46,23 @@ flutter:
   # uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
+<<<<<<< HEAD
    assets:
     - images/user.png
     - images/user_black.png
     - images/userface.png
+=======
+  assets:
+    - images/complaint.png
+    - images/map.png
+    - images/graph.jpg
+    - images/graph1.png
+    - images/msg.png
+    - images/law.jpg
+
+  #  - images/a_dot_ham.jpeg
+
+>>>>>>> 2ca106713ac501bfb48c7f205afbb6f45d28efec
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

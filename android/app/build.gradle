@@ -26,6 +26,10 @@ apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
+googleServices{
+    disableVersionCheck= true
+}
+
 android {
     compileSdkVersion 28
 

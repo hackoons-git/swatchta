@@ -4,230 +4,300 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutterappp/Theme/userTheme.dart';
 
+
 class HomeAdmin extends StatefulWidget {
+
   @override
   _HomeAdminState createState() => _HomeAdminState();
 }
 
 class _HomeAdminState extends State<HomeAdmin> {
+
   @override
+  
   Widget build(BuildContext context) {
-    // Widget graph =
-    Padding(
-      padding: EdgeInsets.all(5.0),
-      child: GestureDetector(
-        onTap: () {
+
+    Widget graph = Padding(
+      padding: EdgeInsets.fromLTRB(50.0, 30.0, 10.0, 10.0),
+      child:GestureDetector(
+        onTap: (){
           Navigator.pushNamed(context, '/GraphScreen');
         },
         child: Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(30.0)),
-              color: Colors.white70,
+                borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                color: Colors.white,
             ),
-            child: ListView(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(10.10, 10.0, 10.0, 10.0),
                   child: Center(
                     child: Column(
                       children: <Widget>[
-                        SizedBox(
-                          height: 120.0,
-                          width: 200.0,
-                          child: Image(
-                            image: AssetImage('images/graph1.png'),
+                          SizedBox(
+                            height: 70.0,
+                            width: 100.0,
+                            child: Icon(
+                              Icons.equalizer,
+                              size: 60.0,
+                              color: Colors.lightBlueAccent,
+                            )
+                            //Image(
+                              //image: AssetImage('images/graph1.png') ,
+                            //),
                           ),
-                        ),
                         Text(
-                          'Graph',
-                          style: Theme.of(context).textTheme.title,
+                            'Graph',
+                          style: Theme.of(context).textTheme.display2,
                         ),
                       ],
                     ),
                   ),
                 )
-              ],
-            )),
+
+
+
+        ),
       ),
     );
 
-    // Widget map =
-    Padding(
-      padding: EdgeInsets.all(5.0),
-      child: GestureDetector(
-        onTap: () {
-          Navigator.pushNamed(context, '/GraphScreen');
-        },
-        child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(30.0)),
-              color: Colors.white,
-            ),
-            child: ListView(
-              children: <Widget>[
-                Center(
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        height: 120.0,
-                        width: 200.0,
-                        child: Icon(
-                          Icons.location_on,
-                          size: 100.0,
-                          semanticLabel: 'Map',
-                        ),
-                      ),
-                      Text(
-                        'Map',
-                        style: Theme.of(context).textTheme.title,
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            )),
-      ),
-    );
 
-    // Widget complaint =
-    Padding(
-      padding: EdgeInsets.all(5.0),
-      child: GestureDetector(
-        onTap: () {
-          Navigator.pushNamed(context, '/GraphScreen');
+    Widget map = Padding(
+      padding: EdgeInsets.fromLTRB(2.0, 30.0, 10.0, 10.0),
+      child:GestureDetector(
+        onTap: (){
+          Navigator.pushNamed(context, '/Map_list');
         },
         child: Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(30.0)),
-              color: Colors.white70,
+                borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                color: Colors.white,
+                border: Border.all(color: Colors.white)
             ),
-            child: ListView(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
                   child: Center(
                     child: Column(
                       children: <Widget>[
                         SizedBox(
-                          height: 120.0,
-                          width: 200.0,
-                          child: Image(
-                            image: AssetImage('images/complaint.png'),
+                          height: 70.0,
+                          width: 100.0,
+                          child: Icon(
+                            Icons.location_on,
+                            color: Colors.lightBlueAccent,
+                            size: 70.0,
+                            semanticLabel: 'Map',
                           ),
+                        ),
+                       Text(
+                          'Map',
+                          style: Theme.of(context).textTheme.display2,
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+
+
+        ),
+      ),
+    );
+
+    Widget complaint = Padding(
+      padding: EdgeInsets.fromLTRB(50.0, 10.0, 10.0, 10.0),
+      child:GestureDetector(
+        onTap: (){
+          Navigator.pushNamed(context, '/GraphScreen');
+        },
+        child: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                color: Colors.white,
+            ),
+
+                child : Padding(
+                  padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+                  child: Center(
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(
+                          height: 70.0,
+                          width: 100.0,
+                          child: Icon(
+                            Icons.people_outline,
+                            size: 60.0,
+                            color: Colors.lightBlueAccent,
+                          )
+                          //Image(
+                            //image: AssetImage('images/complaint.png') ,
+                          //),
                         ),
                         Text(
                           'Complaint',
-                          style: Theme.of(context).textTheme.title,
+                          style: Theme.of(context).textTheme.display2,
                         ),
                       ],
                     ),
                   ),
                 )
-              ],
-            )),
+
+
+
+        ),
       ),
     );
 
-    // Widget msg =
-    Padding(
-      padding: EdgeInsets.all(5.0),
-      child: GestureDetector(
-        onTap: () {
+    Widget msg = Padding(
+      padding: EdgeInsets.fromLTRB(2.0, 10.0, 10.0, 10.0),
+      child:GestureDetector(
+        onTap: (){
           Navigator.pushNamed(context, '/GraphScreen');
         },
         child: Container(
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                color: Colors.white),
-            child: ListView(
-              children: <Widget>[
-                Center(
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                          height: 120.0,
-                          width: 200.0,
+                borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                color: Colors.white,
+            ),
+
+
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+                  child: Center(
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(
+                          height: 70.0,
+                          width: 100.0,
                           child: Icon(
                             Icons.message,
-                            size: 100.0,
-                          )),
-                      Text(
-                        'Message',
-                        style: Theme.of(context).textTheme.title,
-                      ),
-                    ],
+                            color: Colors.lightBlueAccent,
+                            size: 60.0,
+                          )
+                        ),
+                        Text(
+                          'Message',
+                          style: Theme.of(context).textTheme.display2,
+                        ),
+                      ],
+                    ),
                   ),
                 )
-              ],
-            )),
+
+
+
+        ),
       ),
     );
 
-    return MaterialApp(
-      theme: userTheme(),
-      debugShowCheckedModeBanner: false,
-      title: 'Swatchta',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Padding(
-            padding: EdgeInsets.fromLTRB(110.0, 0.0, 0.0, 0.0),
-            child: Text(
-              'Swatcha',
-              style: Theme.of(context).textTheme.title,
+
+    return Scaffold(
+          appBar: AppBar(
+            automaticallyImplyLeading: false,
+            title: Padding(
+              padding: EdgeInsets.fromLTRB(110.0, 0.0, 0.0, 0.0),
+              child: Text(
+                  'Swatchta',
+                  style: Theme
+                      .of(context)
+                      .textTheme
+                      .title,
+                ),
             ),
+            actions: <Widget>[
+              FlatButton.icon(
+                  onPressed: (){},
+                  icon: Icon(Icons.notifications),
+                  label: Text(''),
+              )
+            ],
           ),
-          actions: <Widget>[
-            FlatButton.icon(
-              onPressed: () {},
-              icon: Icon(Icons.notifications),
-              label: Text(''),
-            )
-          ],
-        ),
-        body: new Padding(
-          padding: const EdgeInsets.only(top: 5.0),
-        ),
-      ),
-    );
+
+          backgroundColor: Theme.of(context).backgroundColor,
+          body: new Padding(
+              padding: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+            child: ListView(
+              children: <Widget>[
+               Column(
+                children: <Widget>[
+                   image_slider,
+
+                   Row(
+                     children: <Widget>[
+                       graph,
+                       map,
+                     ],
+                   ),
+
+                   Row(
+                     children: <Widget>[
+                       complaint,
+                       msg,
+                     ],
+                   ),
+
+
+                   aboutUs,
+                ],
+              ),
+              ],
+            ),
+
+          ),
+
+      );
   }
 
+
+
   Widget aboutUs = Padding(
-      padding: EdgeInsets.all(5.0),
-      child: Container(
-        height: 5,
-        width: 2.0,
+      padding: EdgeInsets.fromLTRB(5.0, 45.0, 0.0, 0.0),
+      child:Container(
+        height: 40.0,
+        width: 100.0,
         color: Colors.white,
         child: Padding(
-          padding: EdgeInsets.fromLTRB(145.0, 20.0, 0.0, 0.0),
-          child: Text('About Us'),
+          padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+            child: FlatButton(
+              child: Text(
+                'About Us',
+                style: TextStyle(
+                  color: Colors.black
+                ),
+              ),
+            ),
         ),
-      ));
+      )
+  );
+
+
 
   Widget image_slider = Padding(
-      padding: EdgeInsets.all(5.0),
+      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10.0),
       child: Container(
         height: 200.0,
+
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.black),
+        ),
         child: Carousel(
           boxFit: BoxFit.fill,
           images: [
             AssetImage("images/law.jpg"),
-            AssetImage(
-              "images/graph.jpg",
-            ),
-            AssetImage(
-              "images/complaint.png",
-            ),
-            AssetImage(
-              "images/complaint.png",
-            ),
-            AssetImage(
-              "images/complaint.png",
-            ),
+            AssetImage("images/law.jpg"),
+            AssetImage("images/law.jpg"),
+            AssetImage("images/law.jpg"),
           ],
+
           dotBgColor: Colors.black.withOpacity(0.0),
-          autoplay: true,
+          autoplay: false,
           dotColor: Colors.white,
           dotIncreaseSize: 1.0,
+          
         ),
-      ));
+
+      )
+  );
+
+
 }

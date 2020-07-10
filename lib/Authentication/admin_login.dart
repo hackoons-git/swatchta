@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutterappp/Home/admin_homescreen.dart';
 
 final userref = Firestore.instance.collection("admin");
 
 class LogIn extends StatefulWidget {
+
   @override
   _LogInState createState() => _LogInState();
 }
 
 class _LogInState extends State<LogIn> {
+
   final _formkey = GlobalKey<FormState>();
-  // bool isAuth = false;
 
   String _userId;
   String _password;
@@ -26,20 +26,16 @@ class _LogInState extends State<LogIn> {
   }
 
   @override
-  /* void initState() {
-    getadmins();
-    super.initState();
-  }*/
 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
           title: Center(
-        child: Text(
-          'Swatchta',
-          style: Theme.of(context).textTheme.title,
-        ),
-      )),
+            child: Text(
+              'Swatchta',
+              style: Theme.of(context).textTheme.title,
+            ),
+          )),
       body: Stack(
         children: <Widget>[_showId(), _showPassword(), _showButton()],
       ),
@@ -53,7 +49,7 @@ class _LogInState extends State<LogIn> {
         key: _formkey,
         child: TextFormField(
           decoration: InputDecoration(
-              //hintText: 'Enter Id',
+            //hintText: 'Enter Id',
               labelText: 'User Id',
               labelStyle: Theme.of(context).textTheme.display1,
               contentPadding: EdgeInsets.all(10.0),

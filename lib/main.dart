@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutterappp/Home/admin_homescreen.dart';
+import 'package:flutterappp/Home/area_list.dart';
 import 'package:flutterappp/Home/graph.dart';
+import 'package:flutterappp/Home/logo.dart';
+import 'package:flutterappp/Home/splashscreen.dart';
+import 'package:flutterappp/Home/user_homeScreen.dart';
 import 'Authentication/admin_login.dart';
 import 'Theme/userTheme.dart';
 
@@ -12,16 +16,23 @@ class Swatcha extends StatelessWidget {
   @override
 
   Widget build(BuildContext context) {
+
     return MaterialApp(
+
       debugShowCheckedModeBanner: false,
-      title: 'Swatcha',
+        title: 'Swatcha',
       theme: userTheme(),
-      home: LogIn(),
+      home: Splash(),
 
       routes: {
+        '/Splash' : (context) => Splash(),
+        '/Logo' : (context) => Logo(),
         '/HomeAdmin' : (context) => HomeAdmin(),
         '/LogIn' : (context) => LogIn(),
         '/GraphScreen' : (context) => GraphScreen(),
+        //'/MapScreen' : (context) => MapScreen(),
+        '/HomeUser' : (context) => HomeUser(),
+        '/Map_list' : (context) => Map_list(),
       }
     );
   }

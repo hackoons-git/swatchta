@@ -54,6 +54,7 @@ flutter:
   assets:
     - images/user_black.png
     - images/sewer_image.jpg
+    - images/law.jpg
 
   #  - images/a_dot_ham.jpeg
 

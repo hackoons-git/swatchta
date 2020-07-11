@@ -30,12 +30,14 @@ class _LogInState extends State<LogIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
           title: Center(
             child: Text(
-              'Swatchta',
-              style: Theme.of(context).textTheme.title,
-            ),
-          )),
+                'Swatchta',
+                style: Theme.of(context).textTheme.title,
+              ),
+          ),
+      ),
       body: Stack(
         children: <Widget>[_showId(), _showPassword(), _showButton()],
       ),

@@ -44,7 +44,7 @@ class _LogoState extends State<Logo> {
                           child: Text(
                             'Swatchta ',
                             style: TextStyle(
-                              color:Colors.lightBlue[500],
+                              color:Colors.black,
                               fontSize: 47.0,
                               fontWeight: FontWeight.w900,
                             ),

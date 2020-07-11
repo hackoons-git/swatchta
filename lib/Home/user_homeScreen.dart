@@ -147,6 +147,7 @@ class _HomeUserState extends State<HomeUser> {
                   FlatButton(
                     onPressed: (){
                       _launchInBrowserForComlaint(_complaintUrl);
+                      Navigator.of(context).pop();
                     },
                     child: Text('OK'),
                   ),
@@ -256,6 +257,7 @@ class _HomeUserState extends State<HomeUser> {
                     FlatButton(
                       onPressed: (){
                         _launchInBrowserForNewConnection(_newConnectionUrl);
+                        Navigator.of(context).pop();
                       },
                       child: Text('OK'),
                     ),

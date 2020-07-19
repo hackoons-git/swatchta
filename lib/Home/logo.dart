@@ -151,7 +151,7 @@ class _LogoState extends State<Logo> {
                             ],
                           ),
                           onPressed: (){
-                            Navigator.pushNamed(context, '/HomeUser');
+                            Navigator.pushNamed(context, '/UserMapList');
                           },
                         ),
                       ),

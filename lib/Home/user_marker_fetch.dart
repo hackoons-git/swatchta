@@ -2,19 +2,20 @@ import 'dart:async';
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterappp/Home/area_tile.dart';
 import 'package:flutterappp/Models/area_model.dart';
 import 'package:provider/provider.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 
-class MapMarker extends StatefulWidget {
+class UserMapMarker extends StatefulWidget {
 
   @override
 
   _MapMarkerState createState() => _MapMarkerState();
 }
 
-class _MapMarkerState extends State<MapMarker> {
+class _MapMarkerState extends State<UserMapMarker> {
 
   List<Marker> allMarker = [];
   Completer<GoogleMapController> _controller = Completer();
@@ -55,13 +56,6 @@ class _MapMarkerState extends State<MapMarker> {
                                     style: Theme.of(context).textTheme.title,
                                   )
                               ),
-                              Padding
-                                ( padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
-                                  child: Text(
-                                    map.location,
-                                    style: Theme.of(context).textTheme.title,
-                                  )
-                              ),
                               Padding(
                                 padding: EdgeInsets.fromLTRB(20.0, 10.0, 10.0, 10.0),
                                 child: Row(
@@ -85,7 +79,7 @@ class _MapMarkerState extends State<MapMarker> {
                                 ),
                               ),
                               Padding(
-                                  padding: EdgeInsets.fromLTRB(20.0, 5.0, 10.0, 10.0),
+                                  padding: EdgeInsets.fromLTRB(20.0, 10.0, 10.0, 10.0),
                                   child: Row(
                                     children: <Widget>[
                                       Icon(
@@ -100,34 +94,8 @@ class _MapMarkerState extends State<MapMarker> {
                                         style: Theme.of(context).textTheme.display2,
                                       ),
                                       Text(
-                                        (7 - map.level).toString(),
+                                        map.level.toString(),
                                         style: Theme.of(context).textTheme.display2,
-                                      ),
-                                      Text(
-                                        '/7 (in feet)',
-                                        style: Theme.of(context).textTheme.display2,
-                                      ),
-                                      SizedBox(
-                                        width: 10.0,
-                                      ),
-                                      Text(
-                                        map.level < 4 ? '  Clog Found  ' : '  No Clog Found',
-                                        style: map.level < 4 ? TextStyle(color: Colors.red, fontWeight: FontWeight.w800) : TextStyle(color: Colors.green,fontWeight: FontWeight.w500)
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(right: 0.0),
-                                        child: IconButton(
-                                         // alignment: Alignment.bottomRight,
-                                          icon: Icon(
-                                            Icons.equalizer,
-                                            color: Colors.lightBlueAccent,
-                                            size: 35.0,
-                                          ),
-                                          tooltip: 'See Graph',
-                                          onPressed: (){
-                                            Navigator.pushNamed(context, '/GraphScreen');
-                                          },
-                                        ),
                                       )
                                     ],
                                   )
@@ -148,53 +116,74 @@ class _MapMarkerState extends State<MapMarker> {
 
     marker.forEach((map)
     {
-        final markerId = MarkerId(map.id);
-         allMarker.add(Marker(
-           markerId: markerId,
-           draggable: true,
-           infoWindow: InfoWindow(
-               //title: map.place
-             title: map.location,
-             snippet: 'ManholeNo: '  + map.id ,
-           ),
+      final markerId = MarkerId(map.id);
+      allMarker.add(Marker(
+        markerId: markerId,
+        draggable: true,
+        infoWindow: InfoWindow(
+          //title: map.place
+          title: map.location,
+          // snippet: map.level.toString(),
+        ),
 
-           position: LatLng(map.latitude,map.longitude),
-           //zIndex: 0.0,
-           onTap: () {
-             _showModalBottomSheet(markerId);
-           },
+        position: LatLng(map.latitude,map.longitude),
+        //zIndex: 0.0,
+        onTap: () {
+          _showModalBottomSheet(markerId);
+        },
 
-         )
+      )
       );
     });
-    return ListView(
+    return Stack(
       children: <Widget>[
-        Column(
-          children: <Widget>[
-            Stack(
-              children: <Widget>[
-                Container(
-                    height: MediaQuery.of(context).size.height -50.0,
-                    width: double.infinity,
-                    child: GoogleMap(
-                      mapType: MapType.normal,
-                      initialCameraPosition: CameraPosition(
-                        target: LatLng(28.7041,77.1025),
-                        //target: LatLng(20.5937,78.9629),
-                        zoom: 11.0,
+        Container(
+           height: 200,
+            //width: double.infinity,
+            child: GoogleMap(
+              tiltGesturesEnabled: false,
+              zoomControlsEnabled: true,
+              mapType: MapType.normal,
+              initialCameraPosition: CameraPosition(
+                target: LatLng(28.7041,77.1025),
+                //target: LatLng(20.5937,78.9629),
+                zoom: 11.0,
 
-                      ),
-                      markers: Set.from(allMarker),
-                      onMapCreated: mapController,
-                    )
-                ),
-
-              ],
+              ),
+              markers: Set.from(allMarker),
+              onMapCreated: mapController,
             )
-          ],
         ),
+      Padding(
+        padding: const EdgeInsets.only(top: 210.0),
+        child: ListView.builder(
+          itemCount: marker.length,
+          itemBuilder: (context , index) {
+            return AreaTile(info : marker[index]);
+           },
+        ),
+      ),
       ],
     );
+
+      /*children: <Widget>[
+        Column(
+          children: <Widget>[
+
+
+                  SizedBox(
+                    height: 15.0,
+                  ),
+                  Container(
+                    height: 70,
+                    width: double.infinity,
+                    color: Colors.lightBlueAccent,
+                  ),
+
+
+          ],
+        ),
+      ],*/
   }
 
   void mapController(GoogleMapController controller){

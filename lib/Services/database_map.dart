@@ -32,6 +32,7 @@ class DatabaseServiceMap {
         place: doc.data['area'],
         latitude: doc.data['Coordinates'].latitude,
         longitude: doc.data['Coordinates'].longitude,
+        location: doc.data['location'] ?? ' ',
 
       );
     }).toList();

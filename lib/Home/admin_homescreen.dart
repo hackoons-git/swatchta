@@ -27,6 +27,13 @@ class _HomeAdminState extends State<HomeAdmin> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(15.0)),
                 color: Colors.white,
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black12,
+                  offset: Offset(0.0, 0.0),
+                  blurRadius: 5.0,
+                ),
+              ],
             ),
 
                 child: Padding(
@@ -72,7 +79,14 @@ class _HomeAdminState extends State<HomeAdmin> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(15.0)),
                 color: Colors.white,
-                border: Border.all(color: Colors.white)
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black12,
+                  offset: Offset(0.0, 0.0),
+                  blurRadius: 5.0,
+                ),
+              ],
+
             ),
 
                 child: Padding(
@@ -114,6 +128,13 @@ class _HomeAdminState extends State<HomeAdmin> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(15.0)),
                 color: Colors.white,
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                    color: Colors.black12,
+                    offset: Offset(0.0, 0.0),
+                    blurRadius: 5.0,
+                  ),
+                ],
             ),
 
                 child : Padding(
@@ -134,7 +155,7 @@ class _HomeAdminState extends State<HomeAdmin> {
                           //),
                         ),
                         Text(
-                          'Complaint',
+                          'Complaints',
                           style: Theme.of(context).textTheme.display2,
                         ),
                       ],
@@ -158,9 +179,15 @@ class _HomeAdminState extends State<HomeAdmin> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(15.0)),
                 color: Colors.white,
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                    color: Colors.black12,
+                    offset: Offset(0.0, 0.0),
+                    blurRadius: 5.0,
+                  ),
+                ],
+
             ),
-
-
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
                   child: Center(

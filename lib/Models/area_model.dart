@@ -5,6 +5,7 @@ class SewerInfo{
   final int level;
   final double latitude;
   final double longitude;
+  final String location;
 
-  SewerInfo({this.id, this.place,this.level,this.latitude, this.longitude});
+  SewerInfo({this.id, this.place,this.level,this.latitude, this.longitude, this.location});
 }

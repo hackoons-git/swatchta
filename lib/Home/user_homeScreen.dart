@@ -2,17 +2,23 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutterappp/Home/user_map_screen.dart';
 import 'package:flutterappp/Theme/userTheme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
 class HomeUser extends StatefulWidget {
 
+  String area;
+  HomeUser(this.area);
   @override
-  _HomeUserState createState() => _HomeUserState();
+  _HomeUserState createState() => _HomeUserState(this.area);
 }
 
 class _HomeUserState extends State<HomeUser> {
+
+  String area;
+  _HomeUserState(this.area);
   Future<void> _launched;
   String _complaintUrl = 'http://djb.gov.in/DJBPortal/portals/DJBCustomer.portal';
   String _newConnectionUrl = 'http://delhijalboard.nic.in/content/sewer-connection';
@@ -46,8 +52,8 @@ class _HomeUserState extends State<HomeUser> {
 
   Widget build(BuildContext context) {
 
-    Widget graph = Padding(
-      padding: EdgeInsets.fromLTRB(3.0, 30.0, 10.0, 10.0),
+  /*  Widget graph = Padding(
+      padding: EdgeInsets.fromLTRB(5.0, 30.0, 10.0, 10.0),
       child:GestureDetector(
         onTap: (){
           Navigator.pushNamed(context, '/Map_list');
@@ -56,6 +62,14 @@ class _HomeUserState extends State<HomeUser> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15.0)),
               color: Colors.white,
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black12,
+                  offset: Offset(0.0, 0.0),
+                  blurRadius: 5.0,
+                ),
+              ],
+
             ),
 
             child: Padding(
@@ -88,20 +102,29 @@ class _HomeUserState extends State<HomeUser> {
 
         ),
       ),
-    );
+    );*/
 
 
     Widget map = Padding(
-      padding: EdgeInsets.fromLTRB(0.0, 30.0, 10.0, 10.0),
+      padding: EdgeInsets.fromLTRB(5.0, 30.0, 10.0, 10.0),
       child:GestureDetector(
         onTap: (){
-          Navigator.pushNamed(context, '/Map_list');
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return UserMapScreen(area);
+          }));
         },
         child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(15.0)),
                 color: Colors.white,
-                border: Border.all(color: Colors.white)
+               // border: Border.all(color: Colors.white)
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black12,
+                  offset: Offset(0.0, 0.0),
+                  blurRadius: 5.0,
+                ),
+              ],
             ),
 
             child: Padding(
@@ -134,7 +157,7 @@ class _HomeUserState extends State<HomeUser> {
     );
 
     Widget complaint = Padding(
-      padding: EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 10.0),
+      padding: EdgeInsets.fromLTRB(0.0, 30.0, 10.0, 10.0),
       child:GestureDetector(
         onTap: (){
           showDialog(context: context,
@@ -166,6 +189,13 @@ class _HomeUserState extends State<HomeUser> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15.0)),
               color: Colors.white,
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black12,
+                  offset: Offset(0.0, 0.0),
+                  blurRadius: 5.0,
+                ),
+              ],
             ),
 
             child : Padding(
@@ -204,17 +234,24 @@ class _HomeUserState extends State<HomeUser> {
       padding: EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 10.0),
       child:GestureDetector(
         onTap: (){
-          Navigator.pushNamed(context, '/GraphScreen');
+          Navigator.pushNamed(context, '/FAQ');
         },
         child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15.0)),
               color: Colors.white,
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black12,
+                  offset: Offset(0.0, 0.0),
+                  blurRadius: 5.0,
+                ),
+              ],
             ),
 
 
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 10.0),
+              padding: const EdgeInsets.fromLTRB(5.0, 10.0, 10.0, 10.0),
               child: Center(
                 child: Column(
                   children: <Widget>[
@@ -244,7 +281,7 @@ class _HomeUserState extends State<HomeUser> {
 
 
     Widget connection = Padding(
-      padding: EdgeInsets.fromLTRB(3.0, 10.0, 10.0, 10.0),
+      padding: EdgeInsets.fromLTRB(0.0, 30.0, 10.0, 10.0),
       child:GestureDetector(
         onTap: (){
           showDialog(context: context,
@@ -277,6 +314,13 @@ class _HomeUserState extends State<HomeUser> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15.0)),
               color: Colors.white,
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black12,
+                  offset: Offset(0.0, 0.0),
+                  blurRadius: 5.0,
+                ),
+              ],
             ),
 
             child : Padding(
@@ -297,9 +341,9 @@ class _HomeUserState extends State<HomeUser> {
                       //),
                     ),
                     Text(
-                      '    New\n'
-                          'Connection'
-                          ,
+                      //'    New\n'
+                          'Connection',
+
                       style: Theme.of(context).textTheme.display2,
                     ),
                   ],
@@ -324,6 +368,13 @@ class _HomeUserState extends State<HomeUser> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15.0)),
               color: Colors.white,
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black12,
+                  offset: Offset(0.0, 0.0),
+                  blurRadius: 5.0,
+                ),
+              ],
             ),
 
             child : Padding(
@@ -363,9 +414,9 @@ class _HomeUserState extends State<HomeUser> {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title: Padding(
-            padding: EdgeInsets.fromLTRB(110.0, 0.0, 0.0, 0.0),
+            padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
             child: Text(
-              'Swatchta',
+              'Home',
               style: Theme
                   .of(context)
                   .textTheme
@@ -392,15 +443,16 @@ class _HomeUserState extends State<HomeUser> {
 
                   Row(
                     children: <Widget>[
-                      graph,
+                     // graph,
                       map,
                       complaint,
+                      connection,
                     ],
                   ),
 
                   Row(
                     children: <Widget>[
-                      connection,
+                      //connection,
                       msg,
                       contactUs,
                     ],
